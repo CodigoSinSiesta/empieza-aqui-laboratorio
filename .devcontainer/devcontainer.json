@@ -24,6 +24,15 @@
 
   "postStartCommand": "echo 'Laboratorio listo. Escribe: opencode'",
 
+  // En Codespaces, los modelos gratuitos de OpenCode llegan agotados (IP compartidas): se usa NVIDIA.
+  // Codespaces pide este secreto al crear el codespace y lo pasa como variable de entorno; nunca va en el repositorio.
+  "secrets": {
+    "NVIDIA_API_KEY": {
+      "description": "Clave gratuita de build.nvidia.com para usar sus modelos en OpenCode (solo en Codespaces; en local no hace falta).",
+      "documentationUrl": "https://build.nvidia.com/settings/api-keys"
+    }
+  },
+
   // C.UTF-8 ya viene en la imagen; es_ES necesitaría locale-gen con sudo, que aquí está bloqueado.
   "containerEnv": {
     "LANG": "C.UTF-8"

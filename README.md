@@ -9,27 +9,46 @@ empezar. **Haz aquí todas las prácticas, nunca en tu ordenador ni con código 
 
 ## Abrirlo
 
-**En el navegador, sin instalar nada (recomendado):**
-1. Pulsa **Use this template → Open in a codespace**. Necesitas una cuenta de GitHub; la gratuita incluye horas de
-   Codespaces cada mes.
-2. Espera a que termine de prepararse: verás «Laboratorio listo».
-3. En la terminal, escribe `opencode`.
+Hay dos formas. Las dos dan la misma caja; cambia dónde corre y qué modelo usa el agente.
 
-**En tu ordenador:** con [Docker Desktop](https://www.docker.com/products/docker-desktop/), VS Code y la extensión
-Dev Containers, clona el repositorio y elige **Reopen in Container**.
+### En tu ordenador (recomendado si puedes instalar Docker)
 
-No hace falta cuenta en OpenCode ni tarjeta: el laboratorio usa sus modelos gratuitos. Elige uno con `/models`.
+1. Instala [Docker Desktop](https://www.docker.com/products/docker-desktop/) (o Rancher Desktop), [VS Code](https://code.visualstudio.com/)
+   y la extensión **Dev Containers**.
+2. Clona este repositorio, ábrelo en VS Code y elige **Reopen in Container**.
+3. Cuando veas «Laboratorio listo», escribe `opencode` en la terminal.
+
+**Modelo:** los gratuitos de OpenCode. No hace falta cuenta, ni clave, ni tarjeta. Elige uno con `/models`; los
+gratuitos acaban en `-free`.
+
+### En el navegador, con GitHub Codespaces (si no puedes instalar nada)
+
+1. Consigue una clave gratuita en [build.nvidia.com](https://build.nvidia.com/settings/api-keys). Necesitas una
+   cuenta de NVIDIA y verificar tu teléfono.
+2. Pulsa **Use this template → Open in a codespace**. GitHub te pedirá el secreto `NVIDIA_API_KEY`: pega ahí tu
+   clave. Así entra en la caja como variable de entorno y nunca se guarda en el repositorio.
+3. Cuando veas «Laboratorio listo», escribe `opencode` y elige con `/models` el modelo
+   `nvidia/poolside/laguna-xs-2.1`.
+
+**Por qué aquí no sirven los modelos gratuitos de OpenCode:** desde Codespaces llegan con el límite gratuito ya
+agotado.
+
+**La alternativa, si tienes GitHub Copilot:** en OpenCode escribe `/connect`, elige GitHub Copilot y sigue los pasos.
 
 ## Qué te protege
 
-- El agente trabaja dentro de la caja con un usuario sin privilegios: no puede hacerse administrador (`sudo` está
-  bloqueado), ni ver tus ficheros, ni tus claves, ni el resto de tu ordenador.
-- OpenCode está configurado (`opencode.json`) para **preguntarte** antes de ejecutar un comando, editar un fichero,
-  salir de la carpeta del proyecto o descargar algo de internet. Lee lo que te pide antes de aceptar.
-- Dentro no hay secretos: los modelos gratuitos no necesitan clave.
+- **El agente no sale de la caja.** Trabaja con un usuario sin privilegios: no puede hacerse administrador (`sudo`
+  está bloqueado), ni ver tus ficheros, ni el resto de tu ordenador.
+- **OpenCode te pregunta antes de actuar.** Está configurado (`opencode.json`) para pedirte permiso antes de
+  ejecutar un comando, editar un fichero, salir de la carpeta del proyecto o descargar algo de internet. Lee lo que
+  te pide antes de aceptar.
 
-Lo que **no** cubre: lo que cambie dentro de esta carpeta (para eso está git) y lo que envíes al modelo. Algunos
-modelos gratuitos pueden usar lo que les mandas para mejorarse. Por eso, aquí solo va el proyecto de prácticas.
+**Lo que no cubre:**
+- **Lo que cambie dentro de esta carpeta.** Para eso está git.
+- **Lo que envíes al modelo.** Algunos proveedores gratuitos pueden usarlo para mejorar sus modelos.
+- **Lo que hay dentro de la caja,** que el agente sí puede leer. En Codespaces eso incluye tu clave de NVIDIA o tu
+  sesión de Copilot, y el token de GitHub del codespace. Por eso aquí solo va el proyecto de prácticas, y al
+  terminar conviene borrar el codespace.
 
 ## Volver a empezar
 
@@ -40,7 +59,7 @@ git checkout guia-03
 git reset --hard origin/guia-03
 ```
 
-Y si se estropea la caja entera: borra el codespace y crea otro (o **Rebuild Container** en local).
+Si se estropea la caja entera, borra el codespace y crea otro. En local, usa **Rebuild Container**.
 
 ## El proyecto
 
