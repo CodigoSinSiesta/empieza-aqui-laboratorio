@@ -1,0 +1,8 @@
+{
+  "name": "laboratorio-empieza-aqui",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

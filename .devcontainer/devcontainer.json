@@ -1,0 +1,38 @@
+// Laboratorio de «Empieza aquí» (Código Sin Siesta).
+// El mismo fichero sirve para GitHub Codespaces (la vía principal) y para un dev container local.
+// Qué protege y qué no: README.md.
+{
+  "name": "Laboratorio · Empieza aquí",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+
+  // Usuario sin privilegios: el agente no puede instalar nada en el sistema ni tocar fuera de su casa.
+  "remoteUser": "node",
+  "containerUser": "node",
+
+  // Nada de socket de Docker, ni modo privilegiado, ni capacidades extra.
+  "privileged": false,
+  "runArgs": ["--cap-drop=ALL", "--security-opt=no-new-privileges"],
+
+  // OpenCode 2 fijado: «latest» en GitHub sigue siendo la 1.x.
+  // Sin clave de API, OpenCode solo activa sus modelos gratuitos; aquí dentro no hay ningún secreto.
+  // Si el instalador falla, la creación falla y se ve. La segunda orden comprueba que sudo está bloqueado.
+  "postCreateCommand": {
+    "opencode": "curl -fsSL https://opencode.ai/v2/install | bash -s -- --version 2.2.5",
+    "sin-sudo": "if sudo -n true 2>/dev/null; then echo 'AVISO: el usuario puede usar sudo; el aislamiento no está completo'; else echo 'Comprobado: sin sudo'; fi"
+  },
+
+  "postStartCommand": "echo 'Laboratorio listo. Escribe: opencode'",
+
+  // C.UTF-8 ya viene en la imagen; es_ES necesitaría locale-gen con sudo, que aquí está bloqueado.
+  "containerEnv": {
+    "LANG": "C.UTF-8"
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
