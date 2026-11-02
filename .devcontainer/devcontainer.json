@@ -9,9 +9,10 @@
   "remoteUser": "node",
   "containerUser": "node",
 
-  // Nada de socket de Docker, ni modo privilegiado, ni capacidades extra.
+  // Nada de socket de Docker ni modo privilegiado. no-new-privileges impide subir de privilegios (sudo, setuid):
+  // el usuario node se queda sin capacidades efectivas. --cap-drop=ALL no se usa: Codespaces no arranca con él.
   "privileged": false,
-  "runArgs": ["--cap-drop=ALL", "--security-opt=no-new-privileges"],
+  "runArgs": ["--security-opt=no-new-privileges"],
 
   // OpenCode 2 fijado: «latest» en GitHub sigue siendo la 1.x.
   // Sin clave de API, OpenCode solo activa sus modelos gratuitos; aquí dentro no hay ningún secreto.
