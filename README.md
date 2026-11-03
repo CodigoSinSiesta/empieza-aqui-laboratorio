@@ -52,7 +52,7 @@ agotado.
 
 ## Volver a empezar
 
-Cada guía tiene su rama (`guia-02`, `guia-03`…). Para dejar una guía como al principio:
+Cada guía tiene su rama (`guia-02`, `guia-03`…). Al crear tu copia con **Use this template**, marca **Include all branches** para tenerlas todas. Para dejar una guía como al principio:
 
 ```bash
 git checkout guia-03
