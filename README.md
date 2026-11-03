@@ -1,6 +1,6 @@
-# Laboratorio · Empieza aquí
+# Laboratorio · IA desde cero
 
-El sitio donde vas a hacer todas las prácticas de la ruta [Empieza aquí](https://codigosinsiesta.com/rutas/empieza-aqui)
+El sitio donde vas a hacer todas las prácticas de la ruta [IA desde cero](https://codigosinsiesta.com/rutas/ia-desde-cero)
 de Código Sin Siesta.
 
 Es una caja aislada de tu ordenador con [OpenCode](https://opencode.ai) dentro y un proyecto pequeño, una lista de

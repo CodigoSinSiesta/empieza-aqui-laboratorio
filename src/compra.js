@@ -1,5 +1,5 @@
 // Lista de la compra: el proyecto de juguete del laboratorio.
-// Cada guía de «Empieza aquí» lo hace crecer un poco (una rama por guía).
+// Cada guía de «IA desde cero» lo hace crecer un poco (una rama por guía).
 // Los precios van en céntimos: con euros en coma flotante, 1.2 * 2 + 0.95 da 3.3499999999999996.
 
 export function crearLista() {

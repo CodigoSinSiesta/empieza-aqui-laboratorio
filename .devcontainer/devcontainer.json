@@ -1,8 +1,8 @@
-// Laboratorio de «Empieza aquí» (Código Sin Siesta).
+// Laboratorio de «IA desde cero» (Código Sin Siesta).
 // El mismo fichero sirve para GitHub Codespaces (la vía principal) y para un dev container local.
 // Qué protege y qué no: README.md.
 {
-  "name": "Laboratorio · Empieza aquí",
+  "name": "Laboratorio · IA desde cero",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
 
   // Usuario sin privilegios: el agente no puede instalar nada en el sistema ni tocar fuera de su casa.
